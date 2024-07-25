@@ -1,0 +1,14 @@
+<app-nav></app-nav>
+<!-- UI menu at the bottom -->
+<app-ui-menu></app-ui-menu>
+<app-experiment-info experiment="ild" experimentTagline="ILD Experiment"></app-experiment-info>
+<!-- Phoenix menu at the top right -->
+<app-phoenix-menu [rootNode]="phoenixMenuRoot"></app-phoenix-menu>
+<div id="ildDisplay"></div>
+<app-ui-menu>
+    <app-cycle-events [interval]="5000"></app-cycle-events>
+  </app-ui-menu>
+  <app-ui-menu-wrapper>
+    <app-event-selector></app-event-selector>
+    <app-cycle-events [interval]="5000"></app-cycle-events>
+  </app-ui-menu-wrapper>
