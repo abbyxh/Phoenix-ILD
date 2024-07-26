@@ -1,20 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import {EventDisplayService, PhoenixUIModule} from 'phoenix-ui-components';
+import {EventDisplayService, PhoenixUIModule, EventDataImportOption, EventDataFormat} from 'phoenix-ui-components';
 import { Configuration, PhoenixLoader, PresetView, ClippingSetting, PhoenixMenuNode } from 'phoenix-event-display';
 
 @Component({
   selector: 'app-ild-display',
   standalone: true,
   imports: [
-    PhoenixUIModule
+    PhoenixUIModule,
   ],
   templateUrl: './ild-display.component.html',
   styleUrl: './ild-display.component.scss'
 })
-export class MainDisplayComponent implements OnInit {
+export class ILDDisplayComponent implements OnInit {
 
   /** The root Phoenix menu node. */
   phoenixMenuRoot = new PhoenixMenuNode("Phoenix Menu", 'pheonix-menu');
+
+  eventDataImportOptions: EventDataImportOption[] = [
+    EventDataFormat.EDM4HEPJSON,
+  ];
 
   constructor(private eventDisplay: EventDisplayService) { }
 
@@ -23,11 +27,20 @@ export class MainDisplayComponent implements OnInit {
     const configuration: Configuration = {
       eventDataLoader: new PhoenixLoader(),
       presetViews: [
+        new PresetView(
+          'Global View',
+          [800, 800, 800],
+          [0, 0, 0],
+          'perspective',
+          ClippingSetting.On,
+          340,
+          120
+        ),
         // simple preset views, looking at point 0,0,0 and with no clipping
-        new PresetView('Left View', [0, 0, -12000], [0, 0, 0], 'left-cube'),
-        new PresetView('Center View', [-500, 12000, 0], [0, 0, 0], 'top-cube'),
+        new PresetView('Left View', [0, 0, -12000], [0, 0, 0], 'left-cube', ClippingSetting.Off),
+        new PresetView('Center View', [-500, 12000, 0], [0, 0, 0], 'top-cube', ClippingSetting.Off),
         // more fancy view, looking at point 0,0,5000 and with some clipping
-        new PresetView('Right View', [0, 0, 12000], [0, 0, 5000], 'right-cube', ClippingSetting.On, 90, 90)
+        new PresetView('Right View', [0, 0, 12000], [0, 0, 5000], 'right-cube', ClippingSetting.Off, 90, 90)
       ],
       // default view with x, y, z of the camera and then x, y, z of the point it looks at
       defaultView: [4000, 0, 4000, 0, 0 ,0],
