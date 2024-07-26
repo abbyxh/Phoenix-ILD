@@ -14,7 +14,7 @@ import { Configuration, PhoenixLoader, PresetView, ClippingSetting, PhoenixMenuN
 export class MainDisplayComponent implements OnInit {
 
   /** The root Phoenix menu node. */
-  phoenixMenuRoot = new PhoenixMenuNode("Phoenix Menu");
+  phoenixMenuRoot = new PhoenixMenuNode("Phoenix Menu", 'pheonix-menu');
 
   constructor(private eventDisplay: EventDisplayService) { }
 
@@ -44,6 +44,6 @@ export class MainDisplayComponent implements OnInit {
     this.eventDisplay.init(configuration);
 
     // Load detector geometry (assuming the file exists in the `src/assets` directory of the app)
-    this.eventDisplay.loadGLTFGeometry('assets/detector.gltf', 'Detector');
+    this.eventDisplay.loadGLTFGeometry('assets/ild_f.gltf', undefined, undefined, 1, true);
   }
 }
