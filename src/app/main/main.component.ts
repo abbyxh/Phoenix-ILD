@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterLinkActive, RouterOutlet, RouterLink } from '@angular/router';
 import {EventDisplayService, PhoenixUIModule} from 'phoenix-ui-components';
 
 @Component({
   selector: 'app-main',
-  standalone: true,
-  imports: [RouterLink, RouterOutlet, RouterLinkActive],
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss'
 })

@@ -1,6 +1,6 @@
-<app-nav></app-nav>
-
+<app-loader [loaded]="loaded" [progress]="loadingProgress"></app-loader>
 <!-- UI menu at the bottom -->
+<app-nav></app-nav>
 <app-ui-menu-wrapper>
   <app-event-selector></app-event-selector>
   <app-cycle-events [interval]="5000"></app-cycle-events>

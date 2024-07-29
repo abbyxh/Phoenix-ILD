@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { IldDisplayComponent } from './ild-display.component';
+import { ILDDisplayComponent } from './ild-display.component';
 
 describe('IldDisplayComponent', () => {
-  let component: IldDisplayComponent;
-  let fixture: ComponentFixture<IldDisplayComponent>;
+  let component: ILDDisplayComponent;
+  let fixture: ComponentFixture<ILDDisplayComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [IldDisplayComponent]
+      imports: [ILDDisplayComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(IldDisplayComponent);
+    fixture = TestBed.createComponent(ILDDisplayComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
