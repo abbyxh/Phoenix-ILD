@@ -3,11 +3,11 @@ import {EventDisplayService, EventDataImportOption, EventDataFormat} from 'phoen
 import { Configuration, PhoenixLoader, PresetView, ClippingSetting, PhoenixMenuNode} from 'phoenix-event-display';
 
 @Component({
-  selector: 'app-ld',
+  selector: 'app-ild',
   templateUrl: './ild-display.component.html',
   styleUrl: './ild-display.component.scss'
 })
-export class ILDDisplayComponent implements OnInit {
+export class ILDDisplayComponent1 implements OnInit {
   events: any;
 
   /** The root Phoenix menu node. */
