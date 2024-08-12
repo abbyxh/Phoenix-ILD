@@ -13,14 +13,14 @@ h1 {
   
   .card {
     justify-content: center;
-    margin: 1.2em;
+    margin: auto;
     border: 1px solid rgba(88, 88, 88, 0.08);
     box-shadow: var(--phoenix-box-shadow);
     padding: 1em;
-    width: 20em;
+    width: 65%;
     background-color: var(--phoenix-background-color-secondary);
     border-radius: 10px;
-    position: absolute;
+    position: center;
     place-content: center;
   
     p {

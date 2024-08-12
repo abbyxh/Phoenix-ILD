@@ -22,6 +22,23 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
+## Adding a new detector
+
+To add a new detector a new component is needed with two files at least including:
+
+* `new-detector.component.html`
+* `new-detector.component.ts`
+
+This can be done by going into the Phoenix app and writing in the command line:
+```
+
+ng generate component new-detector
+```
+
+The code in the other detector .component.html and .component.ts files needs to be copied over to the new detector files. Then the detector can be added to list on the `main component` list and the new-detector can be routed.
+
+To changed the detector geometry you need your detector in a .gltf file format (this can be done by using the `xml2gltf converter in the root2gltf repository`). This file should be added to `assets/detectors` and then the detector file should be changed in `new-detector.component.ts`.
+
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

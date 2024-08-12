@@ -13,12 +13,16 @@ import { RouterModule, Routes } from '@angular/router';
 import { MainComponent } from './main/main.component';
 
 import { ILDDisplayComponent1 } from './ild-display/ild-display.component';
-import { ILDDisplayComponent2 } from './ild-display2/ild-display.component';
+import { ILDDisplayComponent2 } from './ild-display-v11/ild-display-v11.component';
+import { ILDDisplayComponent3 } from './ild-v09/ild-v09.component';
+import { ILDDisplayComponent4 } from './ild-s2-v02/ild-s2-v02.component';
 
 let routes: Routes = [
   { path: '', component: MainComponent },
   { path: 'ild1', component: ILDDisplayComponent1 },
-  { path: 'ild2', component: ILDDisplayComponent2 }
+  { path: 'ild2', component: ILDDisplayComponent2 },
+  { path: 'ild3', component: ILDDisplayComponent3 },
+  { path: 'ild4', component: ILDDisplayComponent4 }
 ]
 
 @NgModule({
@@ -26,6 +30,8 @@ let routes: Routes = [
     AppComponent,
     ILDDisplayComponent1,
     ILDDisplayComponent2,
+    ILDDisplayComponent3,
+    ILDDisplayComponent4,
     MainComponent
   ],
   imports: [
