@@ -48,7 +48,7 @@ export class ILDDisplayComponent4 implements OnInit {
     this.eventDisplay.init(configuration);
 
     // Load detector geometry (assuming the file exists in the `src/assets` directory of the app)
-    this.eventDisplay.loadGLTFGeometry('assets/detectors/ILD_s2_v02_test2.gltf', undefined, undefined, 1, true);
+    this.eventDisplay.loadGLTFGeometry('assets/detectors/s2_v02_edited.gltf', undefined, undefined, 1, true);
 
     this.eventDisplay
         .getLoadingManager()
