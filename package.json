@@ -5,19 +5,21 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:prod": "ng build --base-href https://fccsw.web.cern.ch/phoenix-at-ild/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^17.3.0",
-    "@angular/common": "^17.3.0",
-    "@angular/compiler": "^17.3.0",
-    "@angular/core": "^17.3.0",
-    "@angular/forms": "^17.3.0",
-    "@angular/platform-browser": "^17.3.0",
-    "@angular/platform-browser-dynamic": "^17.3.0",
-    "@angular/router": "^17.3.0",
+    "@angular/animations": "^17.3.1",
+    "@angular/common": "^17.3.1",
+    "@angular/compiler": "^17.3.1",
+    "@angular/core": "^17.3.1",
+    "@angular/forms": "^17.3.1",
+    "@angular/platform-browser": "^17.3.1",
+    "@angular/platform-browser-dynamic": "^17.3.1",
+    "@angular/router": "^17.3.1",
+    "jspdf": "*",
     "phoenix-event-display": "^2.16.0",
     "phoenix-ui-components": "^2.16.0",
     "rxjs": "~7.8.0",
@@ -27,8 +29,12 @@
   "devDependencies": {
     "@angular-devkit/build-angular": "^17.3.8",
     "@angular/cli": "^17.3.8",
-    "@angular/compiler-cli": "^17.3.0",
+    "@angular/compiler-cli": "^17.3.1",
+    "@types/dat.gui": "^0.7.7",
     "@types/jasmine": "~5.1.0",
+    "@types/three": "^0.162.0",
+    "angular-cli-ghpages": "^2.0.1",
+    "deploy-gh-pages": "1.0.0",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
@@ -37,5 +43,9 @@
     "karma-jasmine-html-reporter": "~2.1.0",
     "typescript": "~5.4.2"
   },
-  "packageManager": "yarn@4.3.1"
+  "packageManager": "yarn@4.3.1",
+  "resolutions": {
+    "phoenix-ui-components": "2.16.0",
+    "phoenix-event-display": "2.16.0"
+  }
 }
