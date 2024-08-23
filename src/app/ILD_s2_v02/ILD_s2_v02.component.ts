@@ -4,10 +4,10 @@ import { Configuration, PhoenixLoader, PresetView, ClippingSetting, PhoenixMenuN
 
 @Component({
   selector: 'app-ild',
-  templateUrl: './ild-v09.component.html',
-  styleUrl: './ild-v09.component.scss'
+  templateUrl: './ILD_s2_v02.component.html',
+  styleUrl: './ILD_s2_v02.component.scss'
 })
-export class ILDDisplayComponent3 implements OnInit {
+export class ILD_s2_v02Component implements OnInit {
   events: any;
 
   /** The root Phoenix menu node. */
@@ -48,7 +48,7 @@ export class ILDDisplayComponent3 implements OnInit {
     this.eventDisplay.init(configuration);
 
     // Load detector geometry (assuming the file exists in the `src/assets` directory of the app)
-    this.eventDisplay.loadGLTFGeometry('assets/detectors/ILD_l5_o2_v09.gltf', undefined, undefined, 1, true);
+    this.eventDisplay.loadGLTFGeometry('assets/detectors/s2_v02_edited.gltf', undefined, undefined, 1, true);
 
     this.eventDisplay
         .getLoadingManager()
@@ -59,4 +59,3 @@ export class ILDDisplayComponent3 implements OnInit {
         .addLoadListenerWithCheck(() => (this.loaded = true));
   }
 }
-

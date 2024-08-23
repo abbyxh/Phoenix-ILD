@@ -4,10 +4,10 @@ import { Configuration, PhoenixLoader, PresetView, ClippingSetting, PhoenixMenuN
 
 @Component({
   selector: 'app-ild',
-  templateUrl: './ild-s2-v02.component.html',
-  styleUrl: './ild-s2-v02.component.scss'
+  templateUrl: './ILD_l5_o1_v02.component.html',
+  styleUrl: './ILD_l5_o1_v02.component.scss'
 })
-export class ILDDisplayComponent4 implements OnInit {
+export class ILD_l5_o1_v02Component implements OnInit {
   events: any;
 
   /** The root Phoenix menu node. */
@@ -23,6 +23,10 @@ export class ILDDisplayComponent4 implements OnInit {
   constructor(private eventDisplay: EventDisplayService) {};
 
   ngOnInit() {
+    const parameters = {
+      Colour: 0x00ff77,
+      EdgeColour: 0x485948,
+    };
     // Create the event display configuration
     const configuration: Configuration = {
       eventDataLoader: new PhoenixLoader(),
@@ -48,7 +52,7 @@ export class ILDDisplayComponent4 implements OnInit {
     this.eventDisplay.init(configuration);
 
     // Load detector geometry (assuming the file exists in the `src/assets` directory of the app)
-    this.eventDisplay.loadGLTFGeometry('assets/detectors/s2_v02_edited.gltf', undefined, undefined, 1, true);
+    this.eventDisplay.loadGLTFGeometry('assets/detectors/ILD_l5_v02_final.gltf', undefined, undefined, 1, true);
 
     this.eventDisplay
         .getLoadingManager()

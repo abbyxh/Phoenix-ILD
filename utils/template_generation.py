@@ -15,7 +15,13 @@ args = parser.parse_args()
 parent = os.path.dirname(os.getcwd())
 new_folder = f'{parent}/src/app/{args.name}'
 
-#shutil.copyfile(args.detector_gltf, f'{parent}/src/assets/detectors/{os.path.basename(args.detector_gltf)}')
+files = os.listdir(f'{parent}/src/app')
+detector_names = []
+for f in files: 
+    if not re.search('.html|.ts|.scss|main', f):
+        detector_names.append(f)
+
+shutil.copyfile(args.detector_gltf, f'{parent}/src/assets/detectors/{os.path.basename(args.detector_gltf)}')
 
 if not os.path.exists(new_folder):
     os.makedirs(new_folder)
@@ -39,21 +45,14 @@ ts_render = detec_ts.render(html_location = f'./{args.name}.component.html', scs
 with open(f'{new_folder}/{args.name}.component.ts', 'w') as t:
     t.write(ts_render)
 
-files = os.listdir(f'{parent}/src/app')
-detector_names = []
-for f in files: 
-    if not re.search('.html|.ts|.scss|main', f):
-        detector_names.append(f)
-
-#remove main.component.html
-#remove app.module.ts
-
+os.remove(f'{parent}/src/app/app.module.ts')
 app_mod = env.get_template("app.module.ts.jinja")
 mod_render = app_mod.render(folders = detector_names)
-with open('app.module.ts', 'w') as a:
+with open(f'{parent}/src/app/app.module.ts', 'w') as a:
     a.write(mod_render)
 
+os.remove(f'{parent}/src/app/main/main.component.html')
 main_ts = env.get_template("main.component.html.jinja")
 main_render = main_ts.render(folders = detector_names)
-with open('main.component.html', 'w') as m:
+with open(f'{parent}/src/app/main/main.component.html', 'w') as m:
     m.write(main_render)
