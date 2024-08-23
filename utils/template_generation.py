@@ -15,9 +15,9 @@ def main():
 
     parent = os.path.dirname(os.getcwd())
     shutil.copyfile(args.detector_gltf, f'{parent}/src/assets/detectors/{os.path.basename(args.detector_gltf)}')
-    adding_detector_files(args.name, parent)
+    adding_detector_files(args.name, parent, os.path.basename(args.detector_gltf))
 
-def adding_detector_files(detector_name, parent):
+def adding_detector_files(detector_name, parent, gltf):
     new_detector_location = f'{parent}/src/app/{detector_name}'
 
     if not os.path.exists(new_detector_location):
@@ -38,7 +38,7 @@ def adding_detector_files(detector_name, parent):
         h.write(html_render)
 
     detec_ts = env.get_template("component.ts.jinja")
-    ts_render = detec_ts.render(html_location = f'./{args.name}.component.html', scss_location = f'./{args.name}.component.scss', name = args.name, detector_path = f'assests/detectors/{os.path.basename(args.detector_gltf)}')
+    ts_render = detec_ts.render(html_location = f'./{detector_name}.component.html', scss_location = f'./{detector_name}.component.scss', name = detector_name, detector_path = f'assets/detectors/{gltf}')
     with open(f'{new_detector_location}/{detector_name}.component.ts', 'w') as t:
         t.write(ts_render)
 
