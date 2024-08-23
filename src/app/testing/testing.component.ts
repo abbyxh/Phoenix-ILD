@@ -52,7 +52,7 @@ export class testingComponent implements OnInit {
     this.eventDisplay.init(configuration);
 
     // Load detector geometry (assuming the file exists in the `src/assets` directory of the app)
-    this.eventDisplay.loadGLTFGeometry('assests/detectors/testing_colors.gltf', undefined, undefined, 1, true);
+    this.eventDisplay.loadGLTFGeometry('assets/detectors/testing_colors.gltf', undefined, undefined, 1, true);
 
     this.eventDisplay
         .getLoadingManager()
