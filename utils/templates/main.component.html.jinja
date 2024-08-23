@@ -28,9 +28,9 @@
           <div class="drop_down_menu">
             <button class="btn btn-primary">Version Type</button>
           <div class="dropdown-content">
-            {% for f in folders %}
-              <a routerLink="/{{ f }}" routerLinkActive="active" class="btn btn-primary">{{ f }}</a>
-            {% endfor %}
+            {%- for f in folders %}
+            <a routerLink="/{{ f }}" routerLinkActive="active" class="btn btn-primary">{{ f }}</a>
+            {%- endfor %}
             <router-outlet></router-outlet>
           </div>
         </div>
