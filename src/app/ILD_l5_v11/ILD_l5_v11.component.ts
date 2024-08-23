@@ -4,10 +4,10 @@ import { Configuration, PhoenixLoader, PresetView, ClippingSetting, PhoenixMenuN
 
 @Component({
   selector: 'app-ild',
-  templateUrl: './ild-display-v11.component.html',
-  styleUrl: './ild-display-v11.component.scss'
+  templateUrl: './ILD_l5_v11.component.html',
+  styleUrl: './ILD_l5_v11.component.scss'
 })
-export class ILDDisplayComponent2 implements OnInit {
+export class ILD_l5_v11Component implements OnInit {
   events: any;
 
   /** The root Phoenix menu node. */

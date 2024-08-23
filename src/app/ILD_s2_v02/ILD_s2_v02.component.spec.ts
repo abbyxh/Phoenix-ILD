@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { IldS2V02Component } from './ild-s2-v02.component';
+import { ILD_s2_v02Component } from './ILD_s2_v02.component';
 
 describe('IldS2V02Component', () => {
-  let component: IldS2V02Component;
-  let fixture: ComponentFixture<IldS2V02Component>;
+  let component: ILD_s2_v02Component;
+  let fixture: ComponentFixture<ILD_s2_v02Component>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [IldS2V02Component]
+      imports: [ILD_s2_v02Component]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(IldS2V02Component);
+    fixture = TestBed.createComponent(ILD_s2_v02Component);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

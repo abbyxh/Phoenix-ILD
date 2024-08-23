@@ -12,26 +12,26 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { MainComponent } from './main/main.component';
 
-import { ILDDisplayComponent1 } from './ild-display/ild-display.component';
-import { ILDDisplayComponent2 } from './ild-display-v11/ild-display-v11.component';
-import { ILDDisplayComponent3 } from './ild-v09/ild-v09.component';
-import { ILDDisplayComponent4 } from './ild-s2-v02/ild-s2-v02.component';
+import { ILD_l5_o1_v02Component } from './ILD_l5_o1_v02/ILD_l5_o1_v02.component';
+import { ILD_l5_v11Component } from './ILD_l5_v11/ILD_l5_v11.component';
+import { ILD_l5_o2_v09Component } from './ILD_l5_o2_v09/ILD_l5_o2_v09.component';
+import { ILD_s2_v02Component } from './ILD_s2_v02/ILD_s2_v02.component';
 
 let routes: Routes = [
   { path: '', component: MainComponent },
-  { path: 'ild1', component: ILDDisplayComponent1 },
-  { path: 'ild2', component: ILDDisplayComponent2 },
-  { path: 'ild3', component: ILDDisplayComponent3 },
-  { path: 'ild4', component: ILDDisplayComponent4 }
+  { path: 'ILD_l5_o1_v02', component: ILD_l5_o1_v02Component  },
+  { path: 'ILD_l5_v11', component: ILD_l5_v11Component},
+  { path: 'ILD_l5_o2_v09', component: ILD_l5_o2_v09Component },
+  { path: 'ILD_s2_v02', component: ILD_s2_v02Component }
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
-    ILDDisplayComponent1,
-    ILDDisplayComponent2,
-    ILDDisplayComponent3,
-    ILDDisplayComponent4,
+    ILD_l5_o1_v02Component ,
+    ILD_l5_v11Component,
+    ILD_l5_o2_v09Component,
+    ILD_s2_v02Component,
     MainComponent
   ],
   imports: [

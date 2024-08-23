@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { IldV09Component } from './ild-v09.component';
+import { ILD_l5_o1_v02Component } from './ILD_l5_o1_v02.component';
 
-describe('IldV09Component', () => {
-  let component: IldV09Component;
-  let fixture: ComponentFixture<IldV09Component>;
+describe('IldDisplayComponent', () => {
+  let component: ILD_l5_o1_v02Component;
+  let fixture: ComponentFixture<ILD_l5_o1_v02Component>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [IldV09Component]
+      imports: [ILD_l5_o1_v02Component]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(IldV09Component);
+    fixture = TestBed.createComponent(ILD_l5_o1_v02Component);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
