@@ -8,24 +8,23 @@ import { PhoenixUIModule } from 'phoenix-ui-components';
 import { RouterModule, Routes } from '@angular/router';
 import { MainComponent } from './main/main.component';
 
-{% for f in folders %}
-  import { {{ f }}Component } from './{{ f }}/{{ f }}.component';
-{% endfor %}
+{%- for f in folders %}
+import { {{ f }}Component } from './{{ f }}/{{ f }}.component';
+{%- endfor %}
 
 let routes: Routes = [
-    { path: '', component: MainComponent }
-    {% for f in folders %}
-      { path: '{{ f }}', component: {{ f }}Component },
-    {% endfor %}
+    {%- for f in folders %}
+    { path: '{{ f }}', component: {{ f }}Component },
+    {%- endfor %}
     { path: '', component: MainComponent }
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
-    {% for f in folders %}
-      {{ f }}Component,
-    {% endfor %}
+    {%- for f in folders %}
+    {{ f }}Component,
+    {%- endfor %}
     MainComponent
   ],
   imports: [
