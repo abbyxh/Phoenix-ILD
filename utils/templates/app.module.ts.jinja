@@ -1,0 +1,42 @@
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PhoenixUIModule } from 'phoenix-ui-components';
+import { RouterModule, Routes } from '@angular/router';
+import { MainComponent } from './main/main.component';
+
+{% for f in folders %}
+  import { {{ f }}Component } from './{{ f }}/{{ f }}.component';
+{% endfor %}
+
+let routes: Routes = [
+    { path: '', component: MainComponent }
+    {% for f in folders %}
+      { path: '{{ f }}', component: {{ f }}Component },
+    {% endfor %}
+    { path: '', component: MainComponent }
+]
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    {% for f in folders %}
+      {{ f }}Component,
+    {% endfor %}
+    MainComponent
+  ],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    PhoenixUIModule,
+    RouterModule.forRoot(routes)
+  ],
+  providers: [],
+  bootstrap: [AppComponent],
+})
+export class AppModule {}
