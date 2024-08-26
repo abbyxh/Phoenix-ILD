@@ -44,6 +44,12 @@ jobs:
           name: github-pages
           path: doc_artifact
 
+      - name: debugging
+        run: |
+          ls 
+          echo $PWD
+          ls doc_artifact
+
       - name: update build file
         run: |
           tar -xvf doc_artifact/ild-phoenix-app.tar --directory ${GITHUB_WORKSPACE}
