@@ -19,3 +19,5 @@ jobs:
     - uses: borales/actions-yarn@v4
       with: 
         cmd: install
+    - name: build app
+      run: ng build --output-path ild-phoenix-app --base-href /Phoenix-ILD/
