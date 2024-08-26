@@ -44,14 +44,16 @@ jobs:
           name: github-pages
           path: doc_artifact
 
-      - name: debugging
-        run: |
-          ls 
-          echo $PWD
-          ls doc_artifact
-
       - name: update build file
         run: |
-          tar -xvf doc_artifact/ild-phoenix-app.tar --directory ${GITHUB_WORKSPACE}
+          tar -xvf doc_artifact/artifact.tar --directory ${GITHUB_WORKSPACE}
           rm -r doc_artifact
           
+      - name: commit and push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config --global user.email ${GITHUB_ACTOR_ID}+${GITHUB_ACTOR}@users.noreply.github.com
+          git config --global user.name ${GITHUB_ACTOR}
+          git add .
+          git diff-index --quiet HEAD 2>&1 > /dev/null || git commit -m "Update build files for Phoenix-ILD" && git push
