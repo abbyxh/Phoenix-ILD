@@ -3,6 +3,7 @@ import os
 import shutil
 import argparse
 import re
+import subprocess
 
 def main():
     parser = argparse.ArgumentParser(description='Convert detector')
@@ -59,6 +60,8 @@ def adding_detector_files(detector_name, parent, gltf):
     main_render = main_ts.render(folders = folder_list)
     with open(f'{parent}/src/app/main/main.component.html', 'w') as m:
         m.write(main_render)
+
+    #subprocess.run([])
 
 if __name__ == '__main__':
     main()
