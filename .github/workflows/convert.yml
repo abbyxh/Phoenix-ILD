@@ -34,7 +34,7 @@ jobs:
             npm config set user 0
             npm config set unsafe-perm true
             cd root2gltf
-            npm install
+            npm ci
             cd bin
             python conversion_xml2gltf_autoConfig.py \
               -cm $K4GEO/ILD/compact/ILD_l5_o1_v02/ILD_l5_o1_v02.xml \
