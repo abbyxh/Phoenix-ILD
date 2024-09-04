@@ -34,7 +34,9 @@ jobs:
             ls root2gltf
             cd root2gltf
             cd bin
-            python conversion_xml2gltf_autoConfig.py -cm $K4GEO/ILD/compact/ILD_l5_o1_v02/ILD_l5_o1_v02.xml
+            python conversion_xml2gltf_autoConfig.py \
+              -cm $K4GEO/ILD/compact/ILD_l5_o1_v02/ILD_l5_o1_v02.xml \
+              -cn_in ILD_l5_o1_v02.json
 
 
 
