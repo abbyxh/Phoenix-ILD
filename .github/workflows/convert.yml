@@ -27,12 +27,11 @@ jobs:
           container: el9
           view-path: /cvmfs/sw-nightlies.hsf.org/key4hep
           run: |
-            cd root2gltf
             curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
             export NVM_DIR="$HOME/.nvm"
             [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh" 
             nvm install 16
-            ls node_modules
+            cd root2gltf
             npm ci
             cd bin
             python conversion_xml2gltf_autoConfig.py \

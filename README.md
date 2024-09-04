@@ -24,20 +24,31 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 ## Adding a new detector
 
-To add a new detector a new component is needed with two files at least including:
+To add a new detector a new component is needed with three files at least including:
 
 * `new-detector.component.html`
 * `new-detector.component.ts`
+* `new-detector.component.css`
 
 This can be done by going into the Phoenix app and writing in the command line:
+
+```bash
+python add_detector_component.py 
+    -d <detector-gltf-filepath> 
+    -n <detector-name>
 ```
 
-ng generate component new-detector
+The code also deletes the `app.module.ts` and `main.component.html` files and re-adds them so that the detector is added to the list of ILD detectors and also so the routing works. Once these changes are committed to the main branch of the repository, the gh-page should rebuild with the new detector.
+
+## Converting a dd4hep.root event file to json
+
+The conversion of a dd4hep.root event file to json can be completed using the EDM4hep framework. The command line to complete this action is written below:
+
+```bash
+edm4hep2json <some-events.edm4hep.root>
 ```
 
-The code in the other detector .component.html and .component.ts files needs to be copied over to the new detector files. Then the detector can be added to list on the `main component` list and the new-detector can be routed.
-
-To changed the detector geometry you need your detector in a .gltf file format (this can be done by using the `xml2gltf converter in the root2gltf repository`). This file should be added to `assets/detectors` and then the detector file should be changed in `new-detector.component.ts`.
+The command will output the simulation as a root file which can then be imported into the ILD Phoenix Event Display.
 
 ## Further help
 
