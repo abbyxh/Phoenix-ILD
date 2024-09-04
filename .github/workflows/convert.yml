@@ -18,7 +18,7 @@ jobs:
           path: ild
       - uses: actions/checkout@v4
         with:
-          repository: abbyxh/root2gltf/tree/full_conversion
+          repository: abbyxh/root2gltf/
           path: root2gltf
       - uses: cvmfs-contrib/github-action-cvmfs@v4
       - uses: aidasoft/run-lcg-view@v4
