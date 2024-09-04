@@ -31,7 +31,7 @@ jobs:
             export NVM_DIR="$HOME/.nvm"
             [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh" 
             nvm install 16
-            npm -v
+            npm ci
             cd root2gltf
             cd bin
             python conversion_xml2gltf_autoConfig.py \
