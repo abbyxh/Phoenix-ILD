@@ -25,4 +25,8 @@ jobs:
         with:
           container: el9
           view-path: /cvmfs/sw-nightlies.hsf.org/key4hep
+          run: |
+            curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
+            nvm install 16
+
 
