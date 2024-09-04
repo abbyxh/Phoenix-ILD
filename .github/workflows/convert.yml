@@ -14,8 +14,8 @@ jobs:
 
   steps: 
     - uses: actions/checkout@v4
-        with:
-          path: ild
+      with:
+        path: ild
     - uses: actions/checkout@v4
       with:
         repository: abbyxh/root2gltf/tree/full_conversion
