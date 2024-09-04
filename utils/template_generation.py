@@ -61,7 +61,5 @@ def adding_detector_files(detector_name, parent, gltf):
     with open(f'{parent}/src/app/main/main.component.html', 'w') as m:
         m.write(main_render)
 
-    subprocess.run(["ng", "build", "--output-path", "docs", "--base-href", "/Phoenix-ILD/"])
-
 if __name__ == '__main__':
     main()

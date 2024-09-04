@@ -1,0 +1,27 @@
+name: convert
+
+on:
+  push:
+
+concurrency:
+  group: convert
+  cancel-in-progress: true
+
+jobs:
+  build-app:
+    runs-on: ubuntu-latest
+
+  steps: 
+    - uses: actions/checkout@v4
+        with:
+          path: ild
+    - uses: actions/checkout@v4
+      with:
+        repository: abbyxh/root2gltf/tree/full_conversion
+        path: root2gltf
+    - uses: cvmfs-contrib/github-action-cvmfs@v4
+    - uses: aidasoft/run-lcg-view@v4
+      with:
+        container: el9
+        view-path: /cvmfs/sw-nightlies.hsf.org/key4hep
+
