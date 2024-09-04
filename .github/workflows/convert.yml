@@ -31,6 +31,8 @@ jobs:
             export NVM_DIR="$HOME/.nvm"
             [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh" 
             nvm install 16
+            npm config set user 0
+            npm config set unsafe-perm true
             cd root2gltf
             npm ci
             cd bin
