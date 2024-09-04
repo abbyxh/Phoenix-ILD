@@ -32,7 +32,8 @@ jobs:
             [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh" 
             nvm install 16
             cd root2gltf
-            npm install
+            ls /home/runner/work/Phoenix-ILD/Phoenix-ILD/root2gltf/node_modules
+            ls /home/runner/work/Phoenix-ILD/Phoenix-ILD/root2gltf/node_modules/canvas
             npm ci
             cd bin
             python conversion_xml2gltf_autoConfig.py \
