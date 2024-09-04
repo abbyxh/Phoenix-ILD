@@ -30,10 +30,9 @@ jobs:
             curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
             export NVM_DIR="$HOME/.nvm"
             [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh" 
-            nvm install 20
+            nvm install 16
             cd root2gltf
             npm ci
-            nvm use 16
             cd bin
             python conversion_xml2gltf_autoConfig.py \
               -cm $K4GEO/ILD/compact/ILD_l5_o1_v02/ILD_l5_o1_v02.xml \
