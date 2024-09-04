@@ -19,6 +19,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: abbyxh/root2gltf
+          ref: full_conversion
           path: root2gltf
       - uses: cvmfs-contrib/github-action-cvmfs@v4
       - uses: aidasoft/run-lcg-view@v4
@@ -30,5 +31,8 @@ jobs:
             export NVM_DIR="$HOME/.nvm"
             [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh" 
             nvm install 16
+            cd bin
+            python conversion_xml2gltf_autoConfig.py -cm $K4GEO/ILD/compact/ILD_l5_o1_v02/ILD_l5_o1_v02.xml
+
 
 
